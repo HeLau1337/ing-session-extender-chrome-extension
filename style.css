@@ -1,6 +1,8 @@
 /* 
-  ING primary (orange): #ff6200
-*/
+:root {
+  --mdc-theme-primary: #ff6200;
+  --mdc-theme-secondary: #525199;
+} */
 
 html {
 	min-height: auto;
@@ -15,20 +17,3 @@ body {
 	margin-left: .5rem;
 	margin-bottom: .5rem;
 }
-
-/* 
-.mb-1 {
-  margin-bottom: 1rem;
-}
-
-.w-25 {
-  width: 25%;
-}
-
-.w-50 {
-  width: 50%;
-}
-
-.w-100 {
-  width: 100%;
-} */

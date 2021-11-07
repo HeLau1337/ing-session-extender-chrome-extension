@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="row d-flex align-items-center">
+    <div class="row d-flex align-items-center mb-3">
       <div class="col-2">
         <img src="images/ing-96x96.png" height="50" width="50" class="icon">
       </div>
@@ -15,18 +15,41 @@
       </div>
     </div>
     <form id="configForm" action="">
-      <div class="mb-2">
-        <input type="checkbox" id="useExtenderCheckbox" name="useExtenderCheckbox">
-        <label for="useExtenderCheckbox">Use automatic session extender</label>
+      <div class="form-check form-switch mb-2">
+        <input class="form-check-input" type="checkbox" id="useExtenderCheckbox">
+        <label class="form-check-label" for="useExtenderCheckbox">Activate automatic session extension</label>
       </div>
-      <div class="mb-2">
-        <label for="intervalInput">Session refresh interval:</label>
-        <input type="number" id="intervalInput" name="intervalInput" style="width: 4rem;"> seconds
+
+      <hr>
+      
+      <div class="form-group row mb-2">
+        <div class="col-12">
+          <label for="intervalInput">Session refresh interval:</label>
+        </div>
+        <div class="col-3 pr-1">
+          <input type="number" class="form-control" id="intervalInput" aria-describedby="intervalHelp">
+        </div>
+        <div class="col d-flex align-items-center p-0">
+          seconds
+        </div>
+        </div>
+        <small id="intervalHelp" class="form-text text-muted">
+          The interval in which the session should be refreshed automatically. The ING website has to be reloaded for changes to take effect.
+        </small>
       </div>
-      <div class="mb-4">
+
+      <hr>
+
+      <div class="form-group mb-4">
         <label for="cssClassInput">Refresh button CSS class:</label>
-        <input type="text" id="cssClassInput" name="cssClassInput">
+        <input type="text" class="form-control" id="cssClassInput" aria-describedby="cssClassHelp">
+        <small id="cssClassHelp" class="form-text text-muted">
+          The CSS class that identifies the "Session Extend" (or "Refresh") button. The ING website has to be reloaded for changes to take effect.
+        </small>
       </div>
+
+      <hr>
+
       <div class="d-flex justify-content-between">
         <span>
           <button id="saveButton" class="btn btn-primary">Save</button>

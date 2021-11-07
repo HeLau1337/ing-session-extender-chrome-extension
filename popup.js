@@ -22,6 +22,7 @@ configForm.saveButton.addEventListener("click", async () => {
   config.refreshBtnCssClass = configForm.cssClassInput.value;
   chrome.storage.sync.set({ ingSessionExtenderConfig: config });
   setBadgeText();
+  // reloadAllIngTabs();
 });
 
 configForm.resetButton.addEventListener("click", async () => {
@@ -38,4 +39,22 @@ function setBadgeText() {
   } else {
     chrome.action.setBadgeText({text: 'OFF'});
   }
+}
+
+function reloadAllIngTabs() {
+	let ingTabs = [];
+  chrome.tabs.query(
+		{},
+		function(tabs) {
+			tabs.forEach((tab) => {
+				if (tab.url.startsWith('https://banking.ing.de/')) {
+					ingTabs.push(tab);
+          chrome.tabs.reload(
+            tab.id,
+          )
+				}
+			});
+      console.log("ING Tabs:", ingTabs);
+		}
+	);
 }
