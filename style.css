@@ -4,9 +4,9 @@
   --ing-theme-secondary: #525199;
 }
 
-html {
+html#popup {
 	min-height: auto;
-	min-width: 30rem;
+	min-width: 25rem;
 }
 
 body {

@@ -15,7 +15,7 @@
 	"permissions": [ "storage", "activeTab", "scripting", "tabs" ],
 	"host_permissions": [ "https://*.ing.de/*" ],
 	"action": {
-		"default_popup": "popup.html",
+		"default_popup": "popup/popup.html",
 		"default_icon": {
 			"16": "/images/ing-96x96.png",
 			"32": "/images/ing-96x96.png",
@@ -29,5 +29,5 @@
 		"48": "/images/ing-96x96.png",
 		"128": "/images/ing-96x96.png"
 	},
-	"options_page": "popup.html"
+	"options_page": "options/options.html"
 }
