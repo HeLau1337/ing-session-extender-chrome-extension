@@ -1,19 +1,19 @@
 {
-	"name": "ING Session Extender",
-	"description": "Build an Extension!",
-	"version": "0.1",
+	"name": "Automatic Session Extender for ING Online Banking",
+	"description": "Automatically extends an ING online banking session, so you do not get logged out after 5 mins.",
+	"version": "0.1.0",
 	"manifest_version": 3,
 	"background": {
 		"service_worker": "background.js"
 	},
 	"content_scripts": [
 		{
-			"matches": [ "https://*.ing.de/*" ],
+			"matches": [ "https://banking.ing.de/*" ],
 			"js": [ "ing-session-extender.js" ]
 		}
 	],
-	"permissions": [ "storage", "activeTab", "scripting", "tabs" ],
-	"host_permissions": [ "https://*.ing.de/*" ],
+	"permissions": [ "storage", "tabs" ],
+	"host_permissions": [ "https://banking.ing.de/*" ],
 	"action": {
 		"default_popup": "popup/popup.html",
 		"default_icon": {

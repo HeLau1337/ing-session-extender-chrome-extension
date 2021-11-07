@@ -13,11 +13,13 @@ body {
 	padding: .5rem;
 }
 
+/* Extension icon */
 .icon {
 	margin-left: .5rem;
 	margin-bottom: .5rem;
 }
 
+/* Next section: Overriding Bootstrap colors */
 .form-check-input:checked, .btn-primary {
   background-color: var(--ing-theme-primary);
   border-color: var(--ing-theme-primary);
@@ -31,7 +33,6 @@ body {
   border-color: var(--ing-theme-primary);
   box-shadow: 0 0 0 0.25rem rgba(255, 98, 0, 0.25) !important;
 }
-
 
 .btn-primary:active, .btn-primary:hover {
   background-color: var(--ing-theme-primary);
