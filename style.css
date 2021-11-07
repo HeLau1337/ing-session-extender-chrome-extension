@@ -1,8 +1,8 @@
-/* 
+
 :root {
-  --mdc-theme-primary: #ff6200;
-  --mdc-theme-secondary: #525199;
-} */
+  --ing-theme-primary: #ff6200;
+  --ing-theme-secondary: #525199;
+}
 
 html {
 	min-height: auto;
@@ -16,4 +16,57 @@ body {
 .icon {
 	margin-left: .5rem;
 	margin-bottom: .5rem;
+}
+
+.form-check-input:checked, .btn-primary {
+  background-color: var(--ing-theme-primary);
+  border-color: var(--ing-theme-primary);
+}
+
+.form-check-input:active:not(:checked), .form-check-input:focus:not(:checked) {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e") !important;
+}
+
+.form-check-input:focus {
+  border-color: var(--ing-theme-primary);
+  box-shadow: 0 0 0 0.25rem rgba(255, 98, 0, 0.25) !important;
+}
+
+
+.btn-primary:active, .btn-primary:hover {
+  background-color: var(--ing-theme-primary);
+  border-color: var(--ing-theme-primary);
+  filter: brightness(125%);
+}
+
+.btn-primary:focus, .btn-primary:active:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 98, 0, 0.25);
+  border-color: rgba(255, 98, 0, 0.25);
+  background-color: var(--ing-theme-primary);
+  filter: brightness(125%);
+}
+
+.btn-outline-secondary {
+  border-color: var(--ing-theme-secondary);
+  color: var(--ing-theme-secondary);
+}
+
+.btn-outline-secondary:active {
+  background-color: var(--ing-theme-secondary);
+  color: white;
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--ing-theme-secondary);
+  border-color: var(--ing-theme-secondary);
+  color: white;
+  filter: brightness(125%);
+}
+
+.form-control:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: rgba(255, 98, 0, 0.25);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(255, 98, 0, 0.25);
 }
