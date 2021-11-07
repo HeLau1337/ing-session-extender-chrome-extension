@@ -1,87 +1,88 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="../style.css">
-</head>
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+  </head>
 
-<body>
-  <div class="container w-50">
-    <div class="mb-4">
-      <div class="row d-flex align-items-center mb-3">
-        <div class="col-1">
-          <img src="../images/ing_auto_session_extender_icon_128.png" height="50" width="50" class="icon">
-        </div>
-        <div class="col">
-          <h2>Automatic Session Extender</h2>
-          <h4>for ING online banking</h4>
-        </div>
-      </div>
-    </div>
-
-    <form id="configForm" action="">
-      <div class="form-check form-switch m-2">
-        <input class="form-check-input" type="checkbox" id="enableCheckbox">
-        <label class="form-check-label" for="enableCheckbox">Enable</label>
-      </div>
-
-      <hr>
-
-      <h5>Advanced Options</h5>
-
+  <body>
+    <div class="container w-50">
       <div class="mb-4">
-        <div class="form-group row">
-          <div class="col-12 fw-bold">
-            <label for="intervalInput">Session refresh interval:</label>
+        <div class="row d-flex align-items-center mb-3">
+          <div class="col-1">
+            <img src="../images/ing_auto_session_extender_icon_128.png" height="50" width="50" class="icon">
           </div>
-          <div class="col-2 pr-1">
-            <input type="number" class="form-control" id="intervalInput" aria-describedby="intervalHelp">
-          </div>
-          <div class="col d-flex align-items-center p-0">
-            seconds
+          <div class="col">
+            <h2>Automatic Session Extender for ING Banking</h2>
+            <h4>Automatische Verlängerung von ING Online Banking Sitzungen</h4>
           </div>
         </div>
-        <small id="intervalHelp" class="form-text text-muted">
-          The interval in which the session should be refreshed automatically.
+      </div>
+
+      <form id="configForm" action="">
+        <div class="form-check form-switch m-2">
+          <input class="form-check-input" type="checkbox" id="enableCheckbox">
+          <label class="form-check-label" for="enableCheckbox">Aktivieren</label>
+        </div>
+
+        <hr>
+
+        <h5>Erweiterte Optionen</h5>
+
+        <div class="mb-4">
+          <div class="form-group row">
+            <div class="col-12 fw-bold">
+              <label for="intervalInput">Intervall für automatische Sitzungsverlängerung:</label>
+            </div>
+            <div class="col-2 pe-2">
+              <input type="number" class="form-control" id="intervalInput" aria-describedby="intervalHelp">
+            </div>
+            <div class="col d-flex align-items-center p-0">
+              Sekunden
+            </div>
+          </div>
+          <small id="intervalHelp" class="form-text text-muted">
+            Das Intervall, in dem die Sitzung regelmäßig verlängert werden soll.
+          </small>
+        </div>
+
+        <div class="form-group mb-4">
+          <div class="fw-bold">
+            <label for="cssClassInput">CSS-Klasse des Verlängerungs-Buttons:</label>
+          </div>
+          <input type="text" class="form-control" id="cssClassInput" aria-describedby="cssClassHelp">
+          <small id="cssClassHelp" class="form-text text-muted">
+            Die CSS-Klasse, die den Button für die Verlängerung der Sitzung auf https://banking.ing.de/ eindeutig identifiziert.
+          </small>
+        </div>
+
+        <div class="alert alert-info" role="alert">
+          Die ING Website muss neugeladen werden, damit Änderungen an den erweiterten Optionen wirksam werden. Benutze hierfür den "Speichern & Anwenden"-Button.
+        </div>
+
+        <hr>
+
+        <div class="d-flex justify-content-between">
+          <div>
+            <button id="saveButton" class="btn btn-primary">Speichern</button>
+            <button id="saveAndApplyButton" class="btn btn-primary ms-1">Speichern & Anwenden</button>
+          </div>
+          <button id="resetButton" class="btn btn-outline-secondary">Auf Standardeinstellungen zurücksetzen</button>
+        </div>
+      </form>
+      <br/>
+      <footer class="text-muted text-center">
+        <small>
+          Version 0.1.0<br>
+          Anmerkungen: Dies ist <u>keine</u> offizielle Software der ING-Diba AG.
         </small>
-      </div>
+      </footer>
 
-      <div class="form-group mb-4">
-        <div class="fw-bold">
-          <label for="cssClassInput">Refresh button CSS class:</label>
-        </div>
-        <input type="text" class="form-control" id="cssClassInput" aria-describedby="cssClassHelp">
-        <small id="cssClassHelp" class="form-text text-muted">
-          The CSS class that identifies the "extend session" button on https://banking.ing.de/.
-        </small>
-      </div>
-
-      <div class="alert alert-info" role="alert">
-        The ING website has to be reloaded for changes made to the advanced options to take effect. Use the "Save & Apply" button to do this.
-      </div>
-
-      <hr>
-
-      <div class="d-flex justify-content-between">
-        <div>
-          <button id="saveButton" class="btn btn-primary">Save</button>
-          <button id="saveAndApplyButton" class="btn btn-primary">Save & Apply</button>
-        </div>
-        <button id="resetButton" class="btn btn-outline-secondary">Reset to defaults</button>
-      </div>
-    </form>
-    <br/>
-    <footer class="text-muted text-center">
-      <small>
-        Version 0.1.0<br>
-        Note: This is <u>not</u> an official ING product.
-      </small>
-    </footer>
-
-    <script src="options.js" type="module"></script>
-  </div>
-</body>
+      <script src="options.js" type="module"></script>
+    </div>
+  </body>
 
 </html>
