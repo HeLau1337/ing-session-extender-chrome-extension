@@ -1,4 +1,10 @@
 
+const defaultConfig = {
+  isActivated: true,
+  refreshInterval: 60,
+  refreshBtnCssClass: "ing-sn-session-button__timer"
+};
+
 let configForm = document.getElementById("configForm");
 const config = {};
   
@@ -15,4 +21,21 @@ configForm.saveButton.addEventListener("click", async () => {
   config.refreshInterval = configForm.intervalInput.value;
   config.refreshBtnCssClass = configForm.cssClassInput.value;
   chrome.storage.sync.set({ ingSessionExtenderConfig: config });
+  setBadgeText();
 });
+
+configForm.resetButton.addEventListener("click", async () => {
+  configForm.useExtenderCheckbox.checked = defaultConfig.isActivated;
+  configForm.intervalInput.value = defaultConfig.refreshInterval;
+  configForm.cssClassInput.value = defaultConfig.refreshBtnCssClass;
+  chrome.storage.sync.set({ ingSessionExtenderConfig: defaultConfig });
+  setBadgeText();
+});
+
+function setBadgeText() {
+  if (configForm.useExtenderCheckbox.checked === true) {
+    chrome.action.setBadgeText({text: 'ON'});
+  } else {
+    chrome.action.setBadgeText({text: 'OFF'});
+  }
+}
