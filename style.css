@@ -1,0 +1,21 @@
+
+html {
+  min-height: auto;
+  min-width: 30rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.w-25 {
+  width: 25%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-100 {
+  width: 100%;
+}
