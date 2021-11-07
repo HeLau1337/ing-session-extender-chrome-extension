@@ -4,7 +4,7 @@ const config = {};
 
 (async () => {
 	await fetchLatestSessionExtenderConfig();
-	if (config.isActivated) {
+	if (config.isEnabled) {
 		extendSession();
 	}
 })();
@@ -21,7 +21,7 @@ function extendSession() {
 	if (sessionButton !== undefined) {
 		window.setInterval(async function() {
 			await fetchLatestSessionExtenderConfig();
-			if (config.isActivated) {
+			if (config.isEnabled) {
 				sessionButton.click();
 			}
 		}, config.refreshInterval * 1000);

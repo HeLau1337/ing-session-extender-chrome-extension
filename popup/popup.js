@@ -4,11 +4,11 @@ const config = {};
   
 chrome.storage.sync.get("ingSessionExtenderConfig", ({ ingSessionExtenderConfig }) => {
   Object.assign(config, ingSessionExtenderConfig);
-  enableCheckbox.checked = config.isActivated;
+  enableCheckbox.checked = config.isEnabled;
 });
 
 enableCheckbox.addEventListener("click", async () => {
-  config.isActivated = enableCheckbox.checked;
+  config.isEnabled = enableCheckbox.checked;
   chrome.storage.sync.set({ ingSessionExtenderConfig: config });
 
   if (enableCheckbox.checked === true) {

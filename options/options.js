@@ -1,5 +1,5 @@
 const defaultConfig = {
-	isActivated: true,
+	isEnabled: true,
 	refreshInterval: 60,
 	refreshBtnCssClass: 'ing-sn-session-button__timer'
 };
@@ -10,7 +10,7 @@ const config = {};
 // Load initial form data
 chrome.storage.sync.get('ingSessionExtenderConfig', ({ ingSessionExtenderConfig }) => {
 	Object.assign(config, ingSessionExtenderConfig);
-	configForm.enableCheckbox.checked = config.isActivated;
+	configForm.enableCheckbox.checked = config.isEnabled;
 	configForm.intervalInput.value = config.refreshInterval;
 	configForm.cssClassInput.value = config.refreshBtnCssClass;
 });
@@ -28,7 +28,7 @@ configForm.saveAndApplyButton.addEventListener('click', async () => {
 
 // Reset button (set form data to defaultConfig)
 configForm.resetButton.addEventListener('click', async () => {
-	configForm.enableCheckbox.checked = defaultConfig.isActivated;
+	configForm.enableCheckbox.checked = defaultConfig.isEnabled;
 	configForm.intervalInput.value = defaultConfig.refreshInterval;
 	configForm.cssClassInput.value = defaultConfig.refreshBtnCssClass;
 	chrome.storage.sync.set({ ingSessionExtenderConfig: defaultConfig });
@@ -36,7 +36,7 @@ configForm.resetButton.addEventListener('click', async () => {
 });
 
 function saveForm() {
-	config.isActivated = configForm.enableCheckbox.checked;
+	config.isEnabled = configForm.enableCheckbox.checked;
 	config.refreshInterval = configForm.intervalInput.value;
 	config.refreshBtnCssClass = configForm.cssClassInput.value;
 	chrome.storage.sync.set({ ingSessionExtenderConfig: config });
