@@ -32,7 +32,7 @@ configForm.resetButton.addEventListener('click', async () => {
 	configForm.intervalInput.value = defaultConfig.refreshInterval;
 	configForm.cssClassInput.value = defaultConfig.refreshBtnCssClass;
 	chrome.storage.sync.set({ ingSessionExtenderConfig: defaultConfig });
-	setBadgeText();
+	setExtensionIcon(defaultConfig.isEnabled);
 });
 
 function saveForm() {
@@ -40,14 +40,28 @@ function saveForm() {
 	config.refreshInterval = configForm.intervalInput.value;
 	config.refreshBtnCssClass = configForm.cssClassInput.value;
 	chrome.storage.sync.set({ ingSessionExtenderConfig: config });
-	setBadgeText();
+	setExtensionIcon(config.isEnabled);
 }
 
-function setBadgeText() {
-	if (configForm.enableCheckbox.checked === true) {
-		chrome.action.setBadgeText({ text: 'ON' });
+function setExtensionIcon(isEnabled) {
+	if (isEnabled) {
+		chrome.action.setIcon({
+			path: {
+			16: '/images/extension_icon/on/icon_on_16.png',
+			32: '/images/extension_icon/on/icon_on_32.png',
+			48: '/images/extension_icon/on/icon_on_48.png',
+			128: '/images/extension_icon/on/icon_on_128.png',
+		}
+		});
 	} else {
-		chrome.action.setBadgeText({ text: 'OFF' });
+		chrome.action.setIcon({
+			path: {
+			16: '/images/extension_icon/off/icon_off_16.png',
+			32: '/images/extension_icon/off/icon_off_32.png',
+			48: '/images/extension_icon/off/icon_off_48.png',
+			128: '/images/extension_icon/off/icon_off_128.png',
+		}
+		});
 	}
 }
 
