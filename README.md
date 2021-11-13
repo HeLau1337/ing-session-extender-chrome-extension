@@ -6,7 +6,7 @@ Diese kleine Chrome Erweiterung sorgt dafür, dass man beim ING Online Banking n
 Die Erweiterung sammelt keinerlei Nutzerdaten und wertet keine solcher Daten aus. Das Einzige, was passiert, ist, dass regelmäßig automatisiert auf den "Sitzungsverlängerungs-Button" oben rechts auf der ING Online Banking Website gedrückt wird. Dadurch wird der 5-Minuten-Timer regelmäßig zurückgesetzt.
 Man wird allerdings weiterhin abgemeldet, sobald man alle ING-Tabs seit mindestens 5 Minuten geschlossen hat oder den Browser schließt. Ein manueller Logout ist selbstverständlich auch jederzeit möglich.
 
-- funktioniert auf https//banking.ing.de/
+- funktioniert auf https://banking.ing.de/
 - kann ein- und ausgeschaltet werden
 - erweiterte Optionen: 
     - Zeit-Intervall der Sitzungsverlängerung verändern (Standard: spätestens alle 60 Sek. wird automatisiert auf den "Sitzungsverlängerungs-Button" gedrückt)
