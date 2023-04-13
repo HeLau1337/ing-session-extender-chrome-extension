@@ -1,10 +1,8 @@
-const defaultConfig = {
-	isEnabled: true,
-	refreshInterval: 60,
-	refreshBtnCssClass: 'ing-sn-session-button__timer'
-};
+import { defaultConfig, setExtensionIcon } from "../background.js";
+import manifest from '../manifest.json' assert { type: "json" };
 
 let configForm = document.getElementById('configForm');
+document.getElementById('versionNumber').innerHTML = manifest.version;
 const config = {};
 
 // Load initial form data
@@ -41,28 +39,6 @@ function saveForm() {
 	config.refreshBtnCssClass = configForm.cssClassInput.value;
 	chrome.storage.sync.set({ ingSessionExtenderConfig: config });
 	setExtensionIcon(config.isEnabled);
-}
-
-function setExtensionIcon(isEnabled) {
-	if (isEnabled) {
-		chrome.action.setIcon({
-			path: {
-			16: '/images/extension_icon/on/icon_on_16.png',
-			32: '/images/extension_icon/on/icon_on_32.png',
-			48: '/images/extension_icon/on/icon_on_48.png',
-			128: '/images/extension_icon/on/icon_on_128.png',
-		}
-		});
-	} else {
-		chrome.action.setIcon({
-			path: {
-			16: '/images/extension_icon/off/icon_off_16.png',
-			32: '/images/extension_icon/off/icon_off_32.png',
-			48: '/images/extension_icon/off/icon_off_48.png',
-			128: '/images/extension_icon/off/icon_off_128.png',
-		}
-		});
-	}
 }
 
 function reloadAllIngTabs() {

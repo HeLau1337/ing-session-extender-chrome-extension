@@ -1,10 +1,12 @@
 {
 	"name": "Automatic Session Extender for ING Banking",
 	"description": "Verlängert ING Online Banking Sitzungen automatisch, sodass der Nutzer nicht nach 5 Minuten ausgeloggt wird.",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"manifest_version": 3,
+	"minimum_chrome_version": "92",
 	"background": {
-		"service_worker": "background.js"
+		"service_worker": "background.js",
+		"type": "module"
 	},
 	"content_scripts": [
 		{

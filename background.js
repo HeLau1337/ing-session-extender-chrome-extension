@@ -1,15 +1,10 @@
-const defaultConfig = {
+export const defaultConfig = {
 	isEnabled: true,
 	refreshInterval: 60,
-	refreshBtnCssClass: 'ing-sn-session-button__timer'
+	refreshBtnCssClass: 'session-button__refresh-button'
 };
 
-chrome.runtime.onInstalled.addListener(() => {
-	chrome.storage.sync.set({ ingSessionExtenderConfig: defaultConfig });
-	setExtensionIcon(defaultConfig.isEnabled);
-});
-
-function setExtensionIcon(isEnabled) {
+export function setExtensionIcon(isEnabled) {
 	if (isEnabled) {
 		chrome.action.setIcon({
       path: {
@@ -30,3 +25,8 @@ function setExtensionIcon(isEnabled) {
 		});
 	}
 }
+
+chrome.runtime.onInstalled.addListener(() => {
+	chrome.storage.sync.set({ ingSessionExtenderConfig: defaultConfig });
+	setExtensionIcon(defaultConfig.isEnabled);
+});
