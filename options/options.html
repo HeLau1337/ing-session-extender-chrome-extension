@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <div class="container w-50">
+    <div class="container col-xl-6 col-lg-10 col-md-11 col-12">
       <div class="mb-4">
         <div class="row d-flex align-items-center mb-3">
           <div class="col-1">
@@ -56,11 +56,13 @@
           <input type="text" class="form-control" id="cssClassInput" aria-describedby="cssClassHelp">
           <small id="cssClassHelp" class="form-text text-muted">
             Die CSS-Klasse, die den Button für die Verlängerung der Sitzung auf https://banking.ing.de/ eindeutig identifiziert.
+            Falls diese Chrome Extension nicht mehr tut, was sie soll, könnte es daran liegen, dass ING den Namen des Buttons geändert hat.
+            Du kannst versuchen, den aktuellen Namen mithilfe der Chrome Dev Tools (F12) herauszufinden.
           </small>
         </div>
 
         <div class="alert alert-info" role="alert">
-          Die ING Website muss neugeladen werden, damit Änderungen an den erweiterten Optionen wirksam werden. Benutze hierfür den "Speichern & Anwenden"-Button.
+          Die ING Website muss neu geladen werden, damit Änderungen an den erweiterten Optionen wirksam werden. Benutze hierfür den "Speichern & Anwenden"-Button.
         </div>
 
         <hr>
@@ -77,7 +79,7 @@
       <footer class="text-muted text-center">
         <small>
           Version <span id="versionNumber"></span><br>
-          Anmerkungen: Dies ist <u>keine</u> offizielle Software der ING-Diba AG.
+          Anmerkung: Dies ist <u>keine</u> offizielle Software der ING-Diba AG.
         </small>
       </footer>
 
