@@ -1,8 +1,17 @@
 import { defaultConfig, setExtensionIcon } from "../background.js";
-import manifest from '../manifest.json' assert { type: "json" };
 
 let configForm = document.getElementById('configForm');
-document.getElementById('versionNumber').innerHTML = manifest.version;
+
+import('../manifest.json')
+	.then((module) => {
+		const manifest = module.default;
+		document.getElementById('versionNumber').innerHTML = manifest.version;
+	})
+	.catch((error) => {
+		console.error('Error:', error);
+		document.getElementById('versionNumber').innerHTML = "unknown";
+	});
+
 const config = {};
 
 // Load initial form data
