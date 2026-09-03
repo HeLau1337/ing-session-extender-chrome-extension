@@ -1,6 +1,14 @@
 # Automatic Session Extender for ING Banking
 A Chrome Extension for automatically refreshing an ING online banking session.
 
+> [!WARNING]
+> **⚠️ DEPRECATED / EINGESTELLT**
+> 
+> **EN:** This repository is archived and the extension is no longer maintained. The ING bank has updated their online banking portal and completely removed the button to extend the session. Therefore, the core functionality of this extension is no longer possible.
+> 
+> **DE:** Dieses Repository wurde archiviert und die Erweiterung wird nicht mehr weiterentwickelt. Die ING Bank hat ihr Online-Banking-Portal so abgeändert, dass es den Button zur Sitzungsverlängerung nicht mehr gibt. Dementsprechend funktioniert der gesamte Zweck dieser Erweiterung leider nicht mehr.
+
+
 Diese kleine Chrome Erweiterung sorgt dafür, dass man beim ING Online Banking nicht immer nach 5 Minuten automatisch ausgeloggt wird, solange noch ein Tab geöffnet ist. 
 
 Die Erweiterung sammelt keinerlei Nutzerdaten und wertet keine solcher Daten aus. Das Einzige, was passiert, ist, dass regelmäßig automatisiert auf den "Sitzungsverlängerungs-Button" oben rechts auf der ING Online Banking Website gedrückt wird. Dadurch wird der 5-Minuten-Timer regelmäßig zurückgesetzt.
